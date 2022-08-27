@@ -9,10 +9,12 @@ import com.example.smswhteam20.repository.CompleteRentalRepository;
 import com.example.smswhteam20.repository.MemberRepository;
 import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
@@ -24,6 +26,14 @@ public class MemberServiceImpl implements MemberService{
     private final RegistrationRepository registrationRepository;
     private final ApproveRentalRepository approveRentalRepository;
     private final CompleteRentalRepository completeRentalRepository;
+
+    @Override
+    public ArrayList<Member> findAllMembers() {
+        ArrayList<Member> members = new ArrayList<>();
+        Streamable.of(memberRepository.findAll()).forEach(members::add);
+        return members;
+    }
+
 
     @Override
     public void join(Member member) {
@@ -47,7 +57,7 @@ public class MemberServiceImpl implements MemberService{
         member.getRegistrationArrayList().clear();
         Iterable<Registration> registrations = registrationRepository.findAll();
         for (Registration registration : registrations){
-            if(registration.getMemberId() == member.getId()){
+            if(registration.getMemberId().equals(member.getId())){
                 member.registrationArrayList.add(registration);
             }
         }
@@ -58,7 +68,7 @@ public class MemberServiceImpl implements MemberService{
         member.getApproveRentalArrayList().clear();
         Iterable<ApproveRental> approveRentals = approveRentalRepository.findAll();
         for (ApproveRental approveRental : approveRentals){
-            if(approveRental.getMemberId() == member.getId()){
+            if(approveRental.getMemberId().equals(member.getId())){
                 member.approveRentalArrayList.add(approveRental);
             }
         }
@@ -69,7 +79,7 @@ public class MemberServiceImpl implements MemberService{
         member.getCompleteRentalArrayList().clear();
         Iterable<CompleteRental> completeRentals = completeRentalRepository.findAll();
         for (CompleteRental completeRental : completeRentals){
-            if(completeRental.getMemberId() == member.getId()){
+            if(completeRental.getMemberId().equals(member.getId())){
                 member.completeRentalArrayList.add(completeRental);
             }
         }

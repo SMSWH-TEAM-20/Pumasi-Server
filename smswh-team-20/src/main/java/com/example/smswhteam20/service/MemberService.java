@@ -4,12 +4,16 @@ import com.example.smswhteam20.domain.Member;
 import com.example.smswhteam20.domain.Registration;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
 
 public interface MemberService {
     // Member Data Access Object
+
+    // 모든 회원 조회
+    ArrayList<Member> findAllMembers();
 
     // 회원 가입 join (중복 회원 조회 해야함)
     void join (Member member);

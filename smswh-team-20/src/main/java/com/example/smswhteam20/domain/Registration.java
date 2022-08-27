@@ -14,6 +14,8 @@ public class Registration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int itemId;
+
+    private String itemName;
     private String memberId;
     private int itemPrice;
 
@@ -22,8 +24,9 @@ public class Registration {
     private String category;
 
 
-    public Registration(String memo, String memberId, String category, int itemPrice) {
+    public Registration(String memo, String itemName, String memberId, String category, int itemPrice) {
         this.memo = memo;
+        this.itemName = itemName;
         this.memberId = memberId;
         this.category = category;
         this.itemPrice = itemPrice;
@@ -61,5 +64,13 @@ public class Registration {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 }

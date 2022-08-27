@@ -27,6 +27,20 @@ public class RegistrationServiceImpl implements RegistrationService{
     }
 
     @Override
+    public ArrayList<Registration> findAllRegistrationByCategory(String category) {
+        ArrayList<Registration> registrations = findAllRegistration(); // 전체 리스트 조회
+        ArrayList<Registration> registrationArrayList = new ArrayList<>(); // 전체 리스트 중 카테고리가 같은 Registration들 저장
+
+        for(Registration registration : registrations){
+            if(registration.getCategory().equals(category)){
+                registrationArrayList.add(registration);
+            }
+        }
+
+        return registrationArrayList;
+    }
+
+    @Override
     public void register(Registration registration) {
         registrationRepository.save(registration);
     }
@@ -38,8 +52,9 @@ public class RegistrationServiceImpl implements RegistrationService{
 
     @Transactional
     @Override
-    public void changeInformation(Registration registration, String memo, String category, int itemPrice) {
+    public void changeInformation(Registration registration, String itemName, String memo, String category, int itemPrice) {
         Optional<Registration> registration1 = registrationRepository.findById(registration.getItemId());
+        registration1.get().setItemName(itemName);
         registration1.get().setMemo(memo);
         registration1.get().setCategory(category);
         registration1.get().setItemPrice(itemPrice);
