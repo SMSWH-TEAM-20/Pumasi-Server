@@ -27,6 +27,7 @@ public class Member  {
     public ArrayList<ApproveRental> approveRentalArrayList;
     public ArrayList<CompleteRental> completeRentalArrayList;
 
+
     public Member(String id, String name, String password, String email, String telNum) {
         this.id = id;
         this.name = name;

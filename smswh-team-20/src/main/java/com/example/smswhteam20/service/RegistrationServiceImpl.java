@@ -22,7 +22,7 @@ public class RegistrationServiceImpl implements RegistrationService{
     }
 
     @Override
-    public void deleteRegisteration(Registration registration) {
+    public void deleteRegistration(Registration registration){
         registrationRepository.delete(registration);
     }
 

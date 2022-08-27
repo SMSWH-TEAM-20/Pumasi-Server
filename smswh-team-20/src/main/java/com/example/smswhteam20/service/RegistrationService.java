@@ -10,8 +10,9 @@ public interface RegistrationService {
     // 물건 등록
     void register(Registration registration);
 
+
     // 물건 삭제
-    void deleteRegisteration(Registration registration);
+    void deleteRegistration(Registration registration);
 
     // 등록했던 물건 정보 수정
     void changeInformation(Registration registration, int itemPrice, String memo, String category);

@@ -16,10 +16,10 @@ public class CompleteRental {
     private int completeRentalId;
     private int itemId;
     private int approveRentalId;
-
     private String memberId;
 
     public CompleteRental(int itemId, int approveRentalId, String memberId) {
+
         this.itemId = itemId;
         this.approveRentalId = approveRentalId;
         this.memberId = memberId;
@@ -56,4 +56,5 @@ public class CompleteRental {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
 }

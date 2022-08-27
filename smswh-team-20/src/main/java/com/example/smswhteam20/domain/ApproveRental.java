@@ -14,6 +14,8 @@ public class ApproveRental {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int approveRentalId;
+
+
     private int itemId;
     private int rentalId;
 
@@ -56,4 +58,5 @@ public class ApproveRental {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
 }
