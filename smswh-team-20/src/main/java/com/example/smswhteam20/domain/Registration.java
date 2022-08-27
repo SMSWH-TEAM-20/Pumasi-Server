@@ -1,6 +1,8 @@
 package com.example.smswhteam20.domain;
 
 public class Registration {
+
+
     private String itemId;
     private String memberId;
     private int itemPrice;
@@ -34,4 +36,5 @@ public class Registration {
     public void setItemPrice(int itemPrice) {
         this.itemPrice = itemPrice;
     }
+
 }
