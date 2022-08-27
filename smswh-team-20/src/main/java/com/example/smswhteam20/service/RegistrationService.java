@@ -10,7 +10,8 @@ public interface RegistrationService {
     // 물건 등록
     void register(Registration registration);
 
+
     // 물건 삭제
-    void deleteRegisteration(Registration registration);
+    void deleteRegistration(Registration registration);
 
 }

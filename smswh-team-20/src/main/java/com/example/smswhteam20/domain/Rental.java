@@ -1,7 +1,12 @@
 package com.example.smswhteam20.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Rental")
 public class Rental {
@@ -24,16 +29,9 @@ public class Rental {
         return memberId;
     }
 
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
-    }
 
     public int getItemId() {
         return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
     }
 
     public int getRentalTime() {
@@ -56,7 +54,4 @@ public class Rental {
         return rentalId;
     }
 
-    public void setRentalId(int rentalId) {
-        this.rentalId = rentalId;
-    }
 }

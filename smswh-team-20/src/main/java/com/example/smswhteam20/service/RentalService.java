@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface RentalService {
 
-    Rental createRental(String memberId, int itemId, int rentalTime, String memo); //대여 주문 생성
+    void createRental(Rental rental); //대여 주문 생성
 
     void confirmRental(int rentalId, int itemId); //대여 주문 승인
 

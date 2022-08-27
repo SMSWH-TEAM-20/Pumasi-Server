@@ -14,11 +14,7 @@ public class RentalServiceImpl implements RentalService {
     private final CompleteRentalRepository completeRentalRepository;
 
     @Override
-    public Rental createRental(String memberId, int itemId, int rentalTime, String memo){
-        Rental rental = new Rental(memberId, itemId, rentalTime, memo);
-        rentalRepository.save(rental);
-        return rental;
-    }
+    public void createRental(Rental rental){ rentalRepository.save(rental);}
 
     @Override
     public void confirmRental(int rentalId, int itemId) {
