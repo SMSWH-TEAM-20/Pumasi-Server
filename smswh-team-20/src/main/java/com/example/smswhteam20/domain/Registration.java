@@ -11,7 +11,8 @@ public class Registration {
     private String memo;
 
 
-    public Registration(String memo, Integer itemId, String memberId, int itemPrice) {
+
+    public Registration(String memo, int itemId, String memberId, int itemPrice) {
         this.memo = memo;
         this.itemId = itemId;
         this.memberId = memberId;
@@ -23,6 +24,7 @@ public class Registration {
     }
 
     public void setItemId(Integer itemId) {
+
         this.itemId = itemId;
     }
 
