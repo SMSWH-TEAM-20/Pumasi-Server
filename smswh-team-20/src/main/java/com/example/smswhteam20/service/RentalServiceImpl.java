@@ -17,21 +17,24 @@ public class RentalServiceImpl implements RentalService {
     public void createRental(Rental rental){ rentalRepository.save(rental);}
 
     @Override
-    public void confirmRental(int rentalId, int itemId) {
+    public ApproveRental confirmRental(int rentalId, int itemId) {  //대여 승인
         Optional<Rental> rental = rentalRepository.findById(rentalId);  // 주문 했었던 rental
         rentalRepository.deleteById(rentalId);
         String memberId = rental.get().getMemberId();
         ApproveRental approveRental = new ApproveRental(itemId, rentalId, memberId);
         approveRentalRepository.save(approveRental);
+
+        return approveRental;
     }
 
     @Override
-    public void returnRental(int approveRentalId, int itemId) {
+    public CompleteRental returnRental(int approveRentalId, int itemId) { //대여 완료
         Optional<ApproveRental> approveRental = approveRentalRepository.findById(approveRentalId);
         approveRentalRepository.deleteById(approveRentalId);
         String memberId = approveRental.get().getMemberId();
         CompleteRental completeRental = new CompleteRental(itemId, approveRentalId, memberId);
         completeRentalRepository.save(completeRental);
+        return completeRental;
     }
 
 

@@ -15,7 +15,6 @@ public class ApproveRental {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int approveRentalId;
 
-
     private int itemId;
     private int rentalId;
 
