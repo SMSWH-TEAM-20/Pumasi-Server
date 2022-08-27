@@ -1,13 +1,18 @@
 package com.example.smswhteam20.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Registration {
-
-
     private String itemId;
     private String memberId;
     private int itemPrice;
 
-    public Registration(String itemId, String memberId, int itemPrice) {
+    private String memo;
+
+
+    public Registration(String memo, String itemId, String memberId, int itemPrice) {
+        this.memo = memo;
         this.itemId = itemId;
         this.memberId = memberId;
         this.itemPrice = itemPrice;
@@ -35,6 +40,12 @@ public class Registration {
 
     public void setItemPrice(int itemPrice) {
         this.itemPrice = itemPrice;
+    }
+
+    public String getMemo() { return memo;
+    }
+
+    public void setMemo(String memo) { this.memo = memo;
     }
 
 }

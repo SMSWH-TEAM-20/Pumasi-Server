@@ -1,5 +1,8 @@
 package com.example.smswhteam20.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Rental {
 
     private String memberId;

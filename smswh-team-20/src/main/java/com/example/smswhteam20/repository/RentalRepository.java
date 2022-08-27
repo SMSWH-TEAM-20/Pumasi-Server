@@ -1,4 +1,11 @@
 package com.example.smswhteam20.repository;
 
-public interface RentalRepository {
+import com.example.smswhteam20.domain.Member;
+import com.example.smswhteam20.domain.Rental;
+import org.springframework.data.repository.CrudRepository;
+
+public interface RentalRepository extends CrudRepository<Rental, Integer> {
+    // save -> 신청
+
+    //delete -> 삭제
 }
