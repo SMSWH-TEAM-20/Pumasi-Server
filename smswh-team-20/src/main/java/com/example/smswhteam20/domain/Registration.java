@@ -18,13 +18,15 @@ public class Registration {
     private String itemName;
 
     private String memberId;
-    private int itemPrice;
+    private Long itemPrice;
 
     private String memo;
 
     private String category;
 
-    public Registration(String itemName, String memo, String memberId, String category, int itemPrice) {
+
+
+    public Registration(String itemName, String memo, String memberId, String category, Long itemPrice) {
         this.itemName = itemName;
         this.memo = memo;
         this.memberId = memberId;
@@ -50,12 +52,13 @@ public class Registration {
         this.memberId = memberId;
     }
 
-    public int getItemPrice() {
+    public Long getItemPrice() {
         return itemPrice;
     }
 
 
-    public void setItemPrice(int itemPrice) {
+    public void setItemPrice(Long itemPrice) {
+
         this.itemPrice = itemPrice;
     }
 

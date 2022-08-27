@@ -14,7 +14,9 @@ public interface RentalService {
     CompleteRental returnRental(int approveRentalId, int itemId); //대여 주문 승인 후 반납
 
 
-    // 대여 주문한 id로 지금 대여중인 객체(ApproveRental) 찾기
+    // rentalId로 rentalService 객체 조회하기
+
+    // rentalId로 대여한 물건 객체 조회하기
 
 
 }

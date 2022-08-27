@@ -25,6 +25,7 @@ public class RentalServiceImpl implements RentalService {
         approveRentalRepository.save(approveRental);
         approveRental.setRentalTime(rental.get().getRentalTime());
 
+
         return approveRental;
     }
 

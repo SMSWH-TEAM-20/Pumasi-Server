@@ -23,9 +23,11 @@ public class MemberServiceTest {
         Member member = new Member("no.7", "memberA", "1234", "email", "010");
         //회원 가입
         memberService.join(member);
+
         //모든 회원 조회
         memberService.findAllMembers();
         //특정 회원이 등록 중인 물건들 조회
+
         memberService.findRegistrationItems(member);
         // 특정 회원이 대여 중인 물건들 조회
         memberService.findApproveRentalItems(member);
