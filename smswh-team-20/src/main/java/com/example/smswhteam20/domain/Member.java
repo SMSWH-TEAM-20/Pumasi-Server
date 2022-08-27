@@ -1,10 +1,16 @@
 package com.example.smswhteam20.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.HashMap;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Member")
 public class Member  {
@@ -15,7 +21,11 @@ public class Member  {
     private String email;
     private String telNum;
 
-    public HashMap<String, Registration> registrationIdList;
+    private int point;
+
+    public ArrayList<Registration> registrationArrayList;
+    public ArrayList<ApproveRental> approveRentalArrayList;
+    public ArrayList<CompleteRental> completeRentalArrayList;
 
     public Member(String id, String name, String password, String email, String telNum) {
         this.id = id;
@@ -65,11 +75,36 @@ public class Member  {
         this.telNum = telNum;
     }
 
-    public HashMap<String, Registration> getRegistrationIdList() {
-        return registrationIdList;
+
+    public int getPoint() {
+        return point;
     }
 
-    public void setRegistrationIdList(HashMap<String, Registration> registrationIdList) {
-        this.registrationIdList = registrationIdList;
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
+    public ArrayList<Registration> getRegistrationArrayList() {
+        return registrationArrayList;
+    }
+
+    public void setRegistrationArrayList(ArrayList<Registration> registrationArrayList) {
+        this.registrationArrayList = registrationArrayList;
+    }
+
+    public ArrayList<ApproveRental> getApproveRentalArrayList() {
+        return approveRentalArrayList;
+    }
+
+    public void setApproveRentalArrayList(ArrayList<ApproveRental> approveRentalArrayList) {
+        this.approveRentalArrayList = approveRentalArrayList;
+    }
+
+    public ArrayList<CompleteRental> getCompleteRentalArrayList() {
+        return completeRentalArrayList;
+    }
+
+    public void setCompleteRentalArrayList(ArrayList<CompleteRental> completeRentalArrayList) {
+        this.completeRentalArrayList = completeRentalArrayList;
     }
 }

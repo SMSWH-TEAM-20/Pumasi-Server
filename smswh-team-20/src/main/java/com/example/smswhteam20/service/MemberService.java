@@ -17,7 +17,18 @@ public interface MemberService {
     // 회원 조회
     Optional<Member> findMember (String memberId);
 
-    // 특정 회원이 등록한 물건들 조회
-    void findRegistrationItemsById(Member member);
+    // 회원 탈퇴
+    void leave(Member member);
 
+    // 회원 정보 수정
+    void changeMemberInformation(Member member, String id, String password, String name, String email, String telNum);
+
+    // 특정 회원이 등록한 물건들 조회
+    void findRegistrationItems(Member member);
+
+    // 특정 회원이 대여 중인 물건들 조회
+    void findApproveRentalItems(Member member);
+
+    // 특정 회원이 대여 완료한 물건들 조회
+    void findCompleteRentalItems(Member member);
 }

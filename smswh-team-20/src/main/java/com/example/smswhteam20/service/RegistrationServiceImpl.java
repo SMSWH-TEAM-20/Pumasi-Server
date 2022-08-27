@@ -26,4 +26,11 @@ public class RegistrationServiceImpl implements RegistrationService{
         registrationRepository.delete(registration);
     }
 
+    @Override
+    public void changeInformation(Registration registration, int itemPrice, String memo, String category) {
+        registration.setItemPrice(itemPrice);
+        registration.setMemo(memo);
+        registration.setCategory(category);
+    }
+
 }

@@ -1,7 +1,12 @@
 package com.example.smswhteam20.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Registration")
 public class Registration {
@@ -28,11 +33,6 @@ public class Registration {
         return itemId;
     }
 
-    public void setItemId(Integer itemId) {
-
-        this.itemId = itemId;
-    }
-
     public String getMemberId() {
         return memberId;
     }
@@ -55,4 +55,11 @@ public class Registration {
     public void setMemo(String memo) { this.memo = memo;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
