@@ -1,7 +1,12 @@
 package com.example.smswhteam20.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Registration")
 public class Registration {

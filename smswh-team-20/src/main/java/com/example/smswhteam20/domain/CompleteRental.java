@@ -12,8 +12,9 @@ public class CompleteRental {
     private int itemId;
     private int approveRentalId;
 
-    public CompleteRental(int itemId, int approveRentalId) {
+    public CompleteRental(int approveRentalId, int itemId) {
         this.itemId = itemId;
         this.approveRentalId = approveRentalId;
     }
+
 }

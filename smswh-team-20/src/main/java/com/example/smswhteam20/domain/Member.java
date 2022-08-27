@@ -1,10 +1,15 @@
 package com.example.smswhteam20.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.HashMap;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Member")
 public class Member  {
@@ -14,6 +19,7 @@ public class Member  {
     private String password;
     private String email;
     private String telNum;
+
 
     public HashMap<String, Registration> registrationIdList;
 

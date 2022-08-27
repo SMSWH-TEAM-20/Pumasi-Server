@@ -9,11 +9,21 @@ public class ApproveRental {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int approveRentalId;
+
+
     private int itemId;
     private int rentalId;
 
     public ApproveRental(int itemId, int rentalId) {
         this.itemId = itemId;
         this.rentalId = rentalId;
+    }
+
+    public int getApproveRentalId() {
+        return approveRentalId;
+    }
+
+    public int getItemId() {
+        return itemId;
     }
 }
