@@ -20,6 +20,9 @@ public class ApproveRental {
 
     private String memberId;
 
+    private int rentalTime;
+
+
     public ApproveRental(int itemId, int rentalId, String memberId) {
         this.itemId = itemId;
         this.rentalId = rentalId;
@@ -57,5 +60,14 @@ public class ApproveRental {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+    public int getRentalTime() {
+        return rentalTime;
+    }
+
+    public void setRentalTime(int rentalTime) {
+        this.rentalTime = rentalTime;
+    }
+
+
 
 }

@@ -1,8 +1,6 @@
 package com.example.smswhteam20.service;
 
-import com.example.smswhteam20.domain.Member;
 import com.example.smswhteam20.domain.Registration;
-import com.example.smswhteam20.repository.MemberRepository;
 import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.util.Streamable;
