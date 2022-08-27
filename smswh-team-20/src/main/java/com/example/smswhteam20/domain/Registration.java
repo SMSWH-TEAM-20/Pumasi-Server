@@ -11,6 +11,7 @@ public class Registration {
     private String memo;
 
 
+
     public Registration(String memo, int itemId, String memberId, int itemPrice) {
         this.memo = memo;
         this.itemId = itemId;
@@ -18,11 +19,12 @@ public class Registration {
         this.itemPrice = itemPrice;
     }
 
-    public int getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Integer itemId) {
+
         this.itemId = itemId;
     }
 
