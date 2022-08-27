@@ -20,7 +20,6 @@ public interface MemberService {
     // 회원 탈퇴
     void leave(Member member);
 
-
     // 특정 회원이 등록한 물건들 조회
     void findRegistrationItems(Member member);
 

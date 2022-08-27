@@ -4,16 +4,11 @@ import com.example.smswhteam20.domain.ApproveRental;
 import com.example.smswhteam20.domain.CompleteRental;
 import com.example.smswhteam20.domain.Member;
 import com.example.smswhteam20.domain.Registration;
-import com.example.smswhteam20.repository.MemberRepository;
-import com.example.smswhteam20.repository.RegistrationRepository;
 import com.example.smswhteam20.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Optional;
 
 @CrossOrigin

@@ -42,7 +42,6 @@ public class MemberServiceImpl implements MemberService{
     }
 
 
-
     @Override
     public void findRegistrationItems(Member member) {
         member.getRegistrationArrayList().clear();

@@ -5,10 +5,12 @@ import com.example.smswhteam20.domain.Registration;
 import com.example.smswhteam20.repository.MemberRepository;
 import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -16,6 +18,13 @@ import java.util.Optional;
 public class RegistrationServiceImpl implements RegistrationService{
 
     private final RegistrationRepository registrationRepository;
+
+    @Override
+    public ArrayList<Registration> findAllRegistration() {
+        ArrayList<Registration> registrations = new ArrayList<>();
+        Streamable.of(registrationRepository.findAll()).forEach(registrations::add);
+        return registrations;
+    }
 
     @Override
     public void register(Registration registration) {
