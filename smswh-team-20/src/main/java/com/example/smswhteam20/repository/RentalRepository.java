@@ -6,8 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RentalRepository extends CrudRepository<Rental, String> {
+public interface RentalRepository extends CrudRepository<Rental, Integer> {
     // save -> 신청
 
-    //delete -> 삭제
+    // delete -> 삭제
 }

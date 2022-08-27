@@ -1,16 +1,19 @@
 package com.example.smswhteam20.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "ApproveRental")
 public class ApproveRental {
-    private int itemId;
-    private Rental rental;
 
-    public ApproveRental(int itemId, Rental rental) {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int approveRentalId;
+    private int itemId;
+    private int rentalId;
+
+    public ApproveRental(int itemId, int rentalId) {
         this.itemId = itemId;
-        this.rental = rental;
+        this.rentalId = rentalId;
     }
 }
