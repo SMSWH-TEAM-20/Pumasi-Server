@@ -30,7 +30,7 @@ public class MemberServiceTest {
         Member member = new Member("no.7", "memberA", "1234", "email", "010");
         //when
         memberService.join(member);
-        Registration registration = new Registration("물건","입니다", "no.7", "가전", 1);
+        Registration registration = new Registration("물건","입니다", "no.7", "가전", 1L);
         registrationService.register(registration);
         memberService.findRegistrationItems(member);
         Rental rental = new Rental("No.7", 1, 3, "4");

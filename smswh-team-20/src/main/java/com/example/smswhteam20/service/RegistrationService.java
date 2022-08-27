@@ -11,6 +11,8 @@ public interface RegistrationService {
     // 모든 물건 조회
     ArrayList<Registration> findAllRegistration();
 
+    // 물건 아이디로 물건 조회
+
     // 카테고리별 물건 조회
     ArrayList<Registration> findAllRegistrationByCategory(String Category);
 
