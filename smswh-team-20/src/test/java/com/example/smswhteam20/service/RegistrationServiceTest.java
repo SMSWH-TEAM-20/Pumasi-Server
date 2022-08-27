@@ -15,7 +15,7 @@ public class RegistrationServiceTest {
 
 
     @Test
-    public void register() {
+    public void registrationTest() {
         //Given
         Registration registration = new Registration("물건", "no.1", "가전", 1);
         Registration registration1 = new Registration("임", "no.2", "가전", 1);
@@ -23,7 +23,7 @@ public class RegistrationServiceTest {
         registrationService.register(registration1);
         registrationService.register(registration);
         registrationService.deleteRegistration(registration1);
-
+        registrationService.changeInformation(registration, "가방", "잡화", 100 );
 
 
     }

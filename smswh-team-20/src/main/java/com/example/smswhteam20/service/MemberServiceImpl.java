@@ -11,6 +11,7 @@ import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.Optional;
@@ -40,14 +41,7 @@ public class MemberServiceImpl implements MemberService{
         memberRepository.delete(member);
     }
 
-    @Override
-    public void changeMemberInformation(Member member, String id, String password, String name, String email, String telNum) {
-        member.setId(id);
-        member.setPassword(password);
-        member.setName(name);
-        member.setEmail(email);
-        member.setTelNum(telNum);
-    }
+
 
     @Override
     public void findRegistrationItems(Member member) {

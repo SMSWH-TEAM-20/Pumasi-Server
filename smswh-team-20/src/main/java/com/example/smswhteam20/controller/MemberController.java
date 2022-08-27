@@ -60,16 +60,6 @@ public class MemberController {
         memberService.leave(member);
     }
 
-    // 회원 정보 수정
-    @PostMapping("member/change")
-    public void changeInformation(@RequestBody Member member,
-                                  @RequestParam(value = "id", required = false, defaultValue = "")String id,
-                                  @RequestParam(value = "password", required = false, defaultValue = "")String password,
-                                  @RequestParam(value = "name", required = false, defaultValue = "")String name,
-                                  @RequestParam(value = "email", required = false, defaultValue = "")String email,
-                                  @RequestParam(value = "telNum", required = false, defaultValue = "")String telNum){
-        memberService.changeMemberInformation(member, id, password, name, email, telNum);
-    }
 
     // --- 마이페이지 부분 ---
 

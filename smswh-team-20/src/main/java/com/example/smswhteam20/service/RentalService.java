@@ -1,6 +1,8 @@
 package com.example.smswhteam20.service;
 
 
+import com.example.smswhteam20.domain.ApproveRental;
+import com.example.smswhteam20.domain.CompleteRental;
 import com.example.smswhteam20.domain.Member;
 import com.example.smswhteam20.domain.Rental;
 import org.springframework.stereotype.Service;
@@ -11,8 +13,8 @@ public interface RentalService {
 
     void createRental(Rental rental); //대여 주문 생성
 
-    void confirmRental(int rentalId, int itemId); //대여 주문 승인
+    ApproveRental confirmRental(int rentalId, int itemId); //대여 주문 승인
 
-    void returnRental(int approveRentalId, int itemId); //대여 주문 승인 후 반납
+    CompleteRental returnRental(int approveRentalId, int itemId); //대여 주문 승인 후 반납
 
 }

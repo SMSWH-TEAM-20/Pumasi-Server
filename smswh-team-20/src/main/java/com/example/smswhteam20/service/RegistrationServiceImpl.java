@@ -7,6 +7,7 @@ import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -26,11 +27,13 @@ public class RegistrationServiceImpl implements RegistrationService{
         registrationRepository.delete(registration);
     }
 
+    @Transactional
     @Override
-    public void changeInformation(Registration registration, int itemPrice, String memo, String category) {
-        registration.setItemPrice(itemPrice);
-        registration.setMemo(memo);
-        registration.setCategory(category);
+    public void changeInformation(Registration registration, String memo, String category, int itemPrice) {
+        Optional<Registration> registration1 = registrationRepository.findById(registration.getItemId());
+        registration1.get().setMemo(memo);
+        registration1.get().setCategory(category);
+        registration1.get().setItemPrice(itemPrice);
     }
 
 }
