@@ -5,10 +5,12 @@ import com.example.smswhteam20.domain.Registration;
 import com.example.smswhteam20.repository.MemberRepository;
 import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Optional;
 
+@Component
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService{
 
