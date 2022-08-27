@@ -12,10 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Optional;
 
 @Service
@@ -34,7 +32,6 @@ public class MemberServiceImpl implements MemberService{
         return members;
     }
 
-
     @Override
     public void join(Member member) {
         validateDuplicateMember(member);
@@ -51,7 +48,6 @@ public class MemberServiceImpl implements MemberService{
         memberRepository.delete(member);
     }
 
-
     @Override
     public void findRegistrationItems(Member member) {
         if(member.getRegistrationArrayList() != null){
@@ -64,6 +60,7 @@ public class MemberServiceImpl implements MemberService{
             }
 
         }
+
     }
 
     @Override
@@ -71,7 +68,6 @@ public class MemberServiceImpl implements MemberService{
         if(member.getRegistrationArrayList() != null){
             member.getRegistrationArrayList().clear();
         }
-        member.getApproveRentalArrayList().clear();
         Iterable<ApproveRental> approveRentals = approveRentalRepository.findAll();
         for (ApproveRental approveRental : approveRentals){
             if(approveRental.getMemberId().equals(member.getId())){
@@ -85,7 +81,6 @@ public class MemberServiceImpl implements MemberService{
         if(member.getRegistrationArrayList() != null){
             member.getRegistrationArrayList().clear();
         }
-        member.getCompleteRentalArrayList().clear();
         Iterable<CompleteRental> completeRentals = completeRentalRepository.findAll();
         for (CompleteRental completeRental : completeRentals){
             if(completeRental.getMemberId().equals(member.getId())){
