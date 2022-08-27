@@ -13,6 +13,4 @@ public interface RegistrationService {
     // 물건 삭제
     void deleteRegisteration(Registration registration);
 
-    // 회원 아이디로 물건 조회
-
 }
