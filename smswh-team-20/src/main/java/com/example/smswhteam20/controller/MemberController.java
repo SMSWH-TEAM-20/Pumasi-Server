@@ -4,16 +4,11 @@ import com.example.smswhteam20.domain.ApproveRental;
 import com.example.smswhteam20.domain.CompleteRental;
 import com.example.smswhteam20.domain.Member;
 import com.example.smswhteam20.domain.Registration;
-import com.example.smswhteam20.repository.MemberRepository;
-import com.example.smswhteam20.repository.RegistrationRepository;
 import com.example.smswhteam20.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Optional;
 
 @CrossOrigin
@@ -60,16 +55,6 @@ public class MemberController {
         memberService.leave(member);
     }
 
-    // 회원 정보 수정
-    @PostMapping("member/change")
-    public void changeInformation(@RequestBody Member member,
-                                  @RequestParam(value = "id", required = false, defaultValue = "")String id,
-                                  @RequestParam(value = "password", required = false, defaultValue = "")String password,
-                                  @RequestParam(value = "name", required = false, defaultValue = "")String name,
-                                  @RequestParam(value = "email", required = false, defaultValue = "")String email,
-                                  @RequestParam(value = "telNum", required = false, defaultValue = "")String telNum){
-        memberService.changeMemberInformation(member, id, password, name, email, telNum);
-    }
 
     // --- 마이페이지 부분 ---
 
