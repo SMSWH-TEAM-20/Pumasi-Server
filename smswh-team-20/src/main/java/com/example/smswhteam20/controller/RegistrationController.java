@@ -14,30 +14,50 @@ public class RegistrationController {
 
     private final RegistrationService registrationService;
 
+    // 모든 물건들 조회
+    @GetMapping("/registration/findAll")
+    public ArrayList<Registration> findAllRegistration(){
+        return registrationService.findAllRegistration();
+    }
+
     // 카테고리별 등록한 물건들 리스트 조회
     @GetMapping("/registration/category")
-    public ArrayList<Registration> findRegistrationArrayList(
+    public ArrayList<Registration> findRegistrationsByCategory(
             @RequestParam(value = "category", required = false, defaultValue = "") String category){
-        ArrayList<Registration> registrations = registrationService.findAllRegistration(); // 전체 리스트 조회
-        ArrayList<Registration> registrationArrayList = new ArrayList<>(); // 전체 리스트 중 카테고리가 같은 Registration들 저장
 
-        for(Registration registration : registrations){
-            if(registration.getCategory().equals(category)){
-                registrationArrayList.add(registration);
-            }
-        }
-
-        return registrationArrayList;
+        return registrationService.findAllRegistrationByCategory(category);
     }
 
     // 등록한 물건 정보 수정
     @PostMapping("/change/registration")
     public void changeItemInformation(@RequestBody Registration registration,
-                                      @RequestParam(value = "itemPrice", required = false, defaultValue = "") int itemPrice,
+                                      @RequestParam(value = "itemName", required = false, defaultValue = "")String itemName,
                                       @RequestParam(value = "memo", required = false, defaultValue = "")String memo,
-                                      @RequestParam(value = "category", required = false, defaultValue = "")String category){
+                                      @RequestParam(value = "category", required = false, defaultValue = "")String category,
+                                      @RequestParam(value = "itemPrice", required = false, defaultValue = "") int itemPrice){
 
-        registrationService.changeInformation(registration, itemPrice, memo, category);
+        registrationService.changeInformation(registration, itemName, memo, category, itemPrice);
 
     }
+
+    // -- 물건 정보 조회 하는 부분 -- (사실 객체만 있으면 .getName 이런식으로 하면 되긴 함)
+
+    // 물건 이름 조회
+    @GetMapping("/registration/information/name")
+    public String getRegistrationName(@RequestBody Registration registration){
+        return registration.getItemName();
+    }
+
+    // 물건 메모 조회
+    @GetMapping("/registration/information/memo")
+    public String getRegistrationMemo(@RequestBody Registration registration){
+        return registration.getMemo();
+    }
+
+    // 물건 가격 조회
+    @GetMapping("/registration/information/price")
+    public Integer getRegistrationPrice(@RequestBody Registration registration){
+        return registration.getItemPrice();
+    }
+
 }

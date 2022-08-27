@@ -49,6 +49,18 @@ public class MemberController {
 
     }
 
+    // 회원 리스트 조회하기
+    @GetMapping("/find/all_member")
+    public ArrayList<Member> findAllMembers(){
+        return memberService.findAllMembers();
+    }
+
+    // id로 회원 조회하기 - 실패할 경우 null이 return.
+    @GetMapping("/find/member")
+    public Optional<Member> findMemberById(@RequestParam(value = "memberId", required = false, defaultValue = "")String memberId){
+        return memberService.findMember(memberId);
+    }
+
     // 회원 탈퇴
     @PostMapping("/member/leave")
     public void leave(@RequestBody Member member){
@@ -61,14 +73,14 @@ public class MemberController {
     // 회원 이름 조회하기
     @GetMapping("/myPage/getName")
     public String getName(@RequestBody Member member){
-        System.out.println(member.getName());
+        // System.out.println(member.getName());
         return member.getName();
     }
 
     // 회원 포인트 조회하기
     @GetMapping("/myPage/getPoint")
     public int getPoint(@RequestBody Member member) {
-        System.out.println(member.getPoint());
+        // System.out.println(member.getPoint());
         return member.getPoint();
     }
 
@@ -87,7 +99,6 @@ public class MemberController {
         memberService.findApproveRentalItems(member);
         return member.getApproveRentalArrayList();
     }
-
 
     // 회원 대여 완료 상품 목록 조회
     @GetMapping("/myPage/getCompleteRentalList")
