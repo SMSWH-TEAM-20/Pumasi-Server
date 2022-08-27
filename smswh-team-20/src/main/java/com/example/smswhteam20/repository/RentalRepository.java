@@ -4,7 +4,7 @@ import com.example.smswhteam20.domain.Member;
 import com.example.smswhteam20.domain.Rental;
 import org.springframework.data.repository.CrudRepository;
 
-public interface RentalRepository extends CrudRepository<Rental, Integer> {
+public interface RentalRepository extends CrudRepository<Rental, String> {
     // save -> 신청
 
     //delete -> 삭제
