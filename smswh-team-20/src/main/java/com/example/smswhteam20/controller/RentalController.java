@@ -24,8 +24,8 @@ public class RentalController {
     @PostMapping("/rental/create")
     public Rental createRental(@RequestBody Member member,
                                 @RequestBody Registration registration,
-                                @RequestParam(value = "rentalTime", required = false, defaultValue = "") Integer rentalTime,
-                                @RequestParam(value = "memo", required = false, defaultValue = "")String memo){
+                                @RequestParam(required = false, defaultValue = "") Integer rentalTime,
+                                @RequestParam(required = false, defaultValue = "")String memo){
         Rental rental = new Rental(member.getId(), registration.getItemId(), rentalTime, memo);
         rentalService.createRental(rental);
         rentalService.confirmRental(rental.getRentalId(), registration.getItemId());

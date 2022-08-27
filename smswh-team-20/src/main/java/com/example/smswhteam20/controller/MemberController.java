@@ -17,17 +17,17 @@ import java.util.Optional;
 public class MemberController {
     private final MemberService memberService;
 
-    // 회원 가입
+    // 회원 가입 :: 확인 완료
     @PostMapping("/member/join")
     public Member save(@RequestBody Member member){
         memberService.join(member);
         return member;
     }
 
-    // 회원 로그인
+    // 회원 로그인 :: 확인 완료
     @GetMapping("/member/login")
-    public Member login(@RequestParam(value = "id", required = false, defaultValue = "") String memberId,
-                        @RequestParam(value = "password", required = false, defaultValue = "")String password){
+    public Member login(@RequestParam(required = false, defaultValue = "") String memberId,
+                        @RequestParam(required = false, defaultValue = "")String password){
         Optional<Member> member = memberService.findMember(memberId);
 
         if (member.isPresent()){
@@ -49,19 +49,19 @@ public class MemberController {
 
     }
 
-    // 회원 리스트 조회하기
+    // 회원 리스트 조회하기 :: 확인 완료
     @GetMapping("/find/all_member")
     public ArrayList<Member> findAllMembers(){
         return memberService.findAllMembers();
     }
 
-    // id로 회원 조회하기 - 실패할 경우 null이 return.
+    // id로 회원 조회하기 - 실패할 경우 null이 return. :: 확인 완료
     @GetMapping("/find/member")
-    public Optional<Member> findMemberById(@RequestParam(value = "memberId", required = false, defaultValue = "")String memberId){
+    public Optional<Member> findMemberById(@RequestParam(required = false, defaultValue = "")String memberId){
         return memberService.findMember(memberId);
     }
 
-    // 회원 탈퇴
+    // 회원 탈퇴 :: 확인 완료
     @PostMapping("/member/leave")
     public void leave(@RequestBody Member member){
         memberService.leave(member);
@@ -70,23 +70,23 @@ public class MemberController {
 
     // --- 마이페이지 부분 ---
 
-    // 회원 이름 조회하기
+    // 회원 이름 조회하기 :: 확인 완료
     @GetMapping("/myPage/getName")
     public String getName(@RequestBody Member member){
         // System.out.println(member.getName());
         return member.getName();
     }
 
-    // 회원 포인트 조회하기
+    // 회원 포인트 조회하기 : 확인 완료
     @GetMapping("/myPage/getPoint")
     public int getPoint(@RequestBody Member member) {
         // System.out.println(member.getPoint());
         return member.getPoint();
     }
 
-    // 여기서부터 메서드랑 전부 다시 확인 필요
+    // 여기서부터 메서드랑 확인 필요
 
-    // 회원 등록 상품 목록 조회
+    // 회원 등록 상품 목록 조회 :: 확인 완료
     @GetMapping("/myPage/getRegistrationList")
     public ArrayList<Registration> getRegistrationList (@RequestBody Member member){ // 등록한 물품 리스트
         memberService.findRegistrationItems(member);
