@@ -1,15 +1,18 @@
 package com.example.smswhteam20.domain;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Registration")
 public class Registration {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int itemId;
     private String memberId;
     private int itemPrice;
 
     private String memo;
-
 
 
     public Registration(String memo, int itemId, String memberId, int itemPrice) {

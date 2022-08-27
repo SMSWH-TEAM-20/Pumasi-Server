@@ -1,10 +1,14 @@
 package com.example.smswhteam20.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.HashMap;
 
 @Entity
+@Table(name = "Member")
 public class Member  {
+    @Id
     private String id;
     private String name;
     private String password;
