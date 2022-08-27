@@ -17,7 +17,6 @@ public class Registration {
 
     private String itemName;
 
-
     private String memberId;
     private int itemPrice;
 
@@ -75,5 +74,13 @@ public class Registration {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 }

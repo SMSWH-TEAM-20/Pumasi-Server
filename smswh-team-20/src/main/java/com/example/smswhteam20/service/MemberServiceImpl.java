@@ -9,10 +9,12 @@ import com.example.smswhteam20.repository.CompleteRentalRepository;
 import com.example.smswhteam20.repository.MemberRepository;
 import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
@@ -24,6 +26,14 @@ public class MemberServiceImpl implements MemberService{
     private final RegistrationRepository registrationRepository;
     private final ApproveRentalRepository approveRentalRepository;
     private final CompleteRentalRepository completeRentalRepository;
+
+    @Override
+    public ArrayList<Member> findAllMembers() {
+        ArrayList<Member> members = new ArrayList<>();
+        Streamable.of(memberRepository.findAll()).forEach(members::add);
+        return members;
+    }
+
 
     @Override
     public void join(Member member) {
