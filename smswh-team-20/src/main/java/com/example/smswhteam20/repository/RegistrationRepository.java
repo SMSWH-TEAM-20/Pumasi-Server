@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface RegistrationRepository extends CrudRepository<Registration,Integer> {
     // save -> 등록
 
-    //delete -> 삭제
+    // delete -> 삭제
 
 }

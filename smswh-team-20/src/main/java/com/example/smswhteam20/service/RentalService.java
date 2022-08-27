@@ -11,8 +11,8 @@ public interface RentalService {
 
     Rental createRental(String memberId, int itemId, int rentalTime, String memo); //대여 주문 생성
 
-    void confirmRental(Rental rental, int itemId); //대여승인 생성
+    void confirmRental(int rentalId, int itemId); //대여 주문 승인
 
-    void returnRental(Rental rental, int itemId); //반납 생성
+    void returnRental(int approveRentalId, int itemId); //대여 주문 승인 후 반납
 
 }

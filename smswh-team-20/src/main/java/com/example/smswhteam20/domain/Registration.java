@@ -14,11 +14,13 @@ public class Registration {
 
     private String memo;
 
+    private String category;
 
-    public Registration(String memo, int itemId, String memberId, int itemPrice) {
+
+    public Registration(String memo, String memberId, String category, int itemPrice) {
         this.memo = memo;
-        this.itemId = itemId;
         this.memberId = memberId;
+        this.category = category;
         this.itemPrice = itemPrice;
     }
 
