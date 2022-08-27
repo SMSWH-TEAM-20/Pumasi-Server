@@ -38,8 +38,9 @@ public class RegistrationServiceImpl implements RegistrationService{
 
     @Transactional
     @Override
-    public void changeInformation(Registration registration, String memo, String category, int itemPrice) {
+    public void changeInformation(Registration registration,String itemName, String memo, String category, int itemPrice) {
         Optional<Registration> registration1 = registrationRepository.findById(registration.getItemId());
+        registration1.get().setItemName(itemName);
         registration1.get().setMemo(memo);
         registration1.get().setCategory(category);
         registration1.get().setItemPrice(itemPrice);

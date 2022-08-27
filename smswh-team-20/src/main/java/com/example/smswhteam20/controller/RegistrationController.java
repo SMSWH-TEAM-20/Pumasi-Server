@@ -33,11 +33,12 @@ public class RegistrationController {
     // 등록한 물건 정보 수정
     @PostMapping("/change/registration")
     public void changeItemInformation(@RequestBody Registration registration,
-                                      @RequestParam(value = "itemPrice", required = false, defaultValue = "") int itemPrice,
+                                      @RequestParam(value = "itemName", required = false, defaultValue = "")String itemName,
                                       @RequestParam(value = "memo", required = false, defaultValue = "")String memo,
-                                      @RequestParam(value = "category", required = false, defaultValue = "")String category){
+                                      @RequestParam(value = "category", required = false, defaultValue = "")String category,
+                                      @RequestParam(value = "itemPrice", required = false, defaultValue = "") int itemPrice){
 
-        registrationService.changeInformation(registration, itemPrice, memo, category);
+        registrationService.changeInformation(registration, itemName, memo, category, itemPrice);
 
     }
 }

@@ -44,21 +44,27 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void findRegistrationItems(Member member) {
-        member.getRegistrationArrayList().clear();
+        if(member.getRegistrationArrayList() != null){
+            member.getRegistrationArrayList().clear();
+        }
         Iterable<Registration> registrations = registrationRepository.findAll();
         for (Registration registration : registrations){
-            if(registration.getMemberId() == member.getId()){
+            if(registration.getMemberId().equals(member.getId())){
                 member.registrationArrayList.add(registration);
             }
+
         }
     }
 
     @Override
     public void findApproveRentalItems(Member member) {
+        if(member.getRegistrationArrayList() != null){
+            member.getRegistrationArrayList().clear();
+        }
         member.getApproveRentalArrayList().clear();
         Iterable<ApproveRental> approveRentals = approveRentalRepository.findAll();
         for (ApproveRental approveRental : approveRentals){
-            if(approveRental.getMemberId() == member.getId()){
+            if(approveRental.getMemberId().equals(member.getId())){
                 member.approveRentalArrayList.add(approveRental);
             }
         }
@@ -66,10 +72,13 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void findCompleteRentalItems(Member member) {
+        if(member.getRegistrationArrayList() != null){
+            member.getRegistrationArrayList().clear();
+        }
         member.getCompleteRentalArrayList().clear();
         Iterable<CompleteRental> completeRentals = completeRentalRepository.findAll();
         for (CompleteRental completeRental : completeRentals){
-            if(completeRental.getMemberId() == member.getId()){
+            if(completeRental.getMemberId().equals(member.getId())){
                 member.completeRentalArrayList.add(completeRental);
             }
         }
