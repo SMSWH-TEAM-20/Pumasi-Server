@@ -20,7 +20,8 @@ public class RentalServiceImpl implements RentalService {
     public void confirmRental(int rentalId, int itemId) {
         Optional<Rental> rental = rentalRepository.findById(rentalId);  // 주문 했었던 rental
         rentalRepository.deleteById(rentalId);
-        ApproveRental approveRental = new ApproveRental(itemId, rentalId);
+        String memberId = rental.get().getMemberId();
+        ApproveRental approveRental = new ApproveRental(itemId, rentalId, memberId);
         approveRentalRepository.save(approveRental);
     }
 
@@ -28,7 +29,8 @@ public class RentalServiceImpl implements RentalService {
     public void returnRental(int approveRentalId, int itemId) {
         Optional<ApproveRental> approveRental = approveRentalRepository.findById(approveRentalId);
         approveRentalRepository.deleteById(approveRentalId);
-        CompleteRental completeRental = new CompleteRental(itemId, approveRentalId);
+        String memberId = approveRental.get().getMemberId();
+        CompleteRental completeRental = new CompleteRental(itemId, approveRentalId, memberId);
         completeRentalRepository.save(completeRental);
     }
 
