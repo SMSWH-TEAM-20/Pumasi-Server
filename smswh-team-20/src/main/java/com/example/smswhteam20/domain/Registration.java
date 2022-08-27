@@ -4,25 +4,25 @@ import javax.persistence.Entity;
 
 @Entity
 public class Registration {
-    private String itemId;
+    private int itemId;
     private String memberId;
     private int itemPrice;
 
     private String memo;
 
 
-    public Registration(String memo, String itemId, String memberId, int itemPrice) {
+    public Registration(String memo, Integer itemId, String memberId, int itemPrice) {
         this.memo = memo;
         this.itemId = itemId;
         this.memberId = memberId;
         this.itemPrice = itemPrice;
     }
 
-    public String getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(String itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 

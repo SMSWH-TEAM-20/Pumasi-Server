@@ -1,6 +1,7 @@
 package com.example.smswhteam20.domain;
 
 import javax.persistence.Entity;
+import java.util.HashMap;
 
 @Entity
 public class Member  {
@@ -9,6 +10,8 @@ public class Member  {
     private String password;
     private String email;
     private String telNum;
+
+    public HashMap<String, Registration> registrationIdList;
 
     public Member(String id, String name, String password, String email, String telNum) {
         this.id = id;
@@ -58,4 +61,11 @@ public class Member  {
         this.telNum = telNum;
     }
 
+    public HashMap<String, Registration> getRegistrationIdList() {
+        return registrationIdList;
+    }
+
+    public void setRegistrationIdList(HashMap<String, Registration> registrationIdList) {
+        this.registrationIdList = registrationIdList;
+    }
 }
