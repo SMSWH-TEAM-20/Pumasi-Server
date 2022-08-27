@@ -6,10 +6,11 @@ import com.example.smswhteam20.repository.MemberRepository;
 import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class RegistrationServiceImpl implements RegistrationService{
 

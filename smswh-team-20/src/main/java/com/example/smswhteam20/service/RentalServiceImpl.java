@@ -7,9 +7,10 @@ import com.example.smswhteam20.repository.MemberRepository;
 import com.example.smswhteam20.repository.RegistrationRepository;
 import com.example.smswhteam20.repository.RentalRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Service
 @RequiredArgsConstructor
 public class RentalServiceImpl implements RentalService {
     private final RentalRepository rentalRepository;
