@@ -25,6 +25,7 @@ public class Registration {
     private String category;
 
 
+
     public Registration(String itemName, String memo, String memberId, String category, Long itemPrice) {
         this.itemName = itemName;
         this.memo = memo;
@@ -38,6 +39,11 @@ public class Registration {
         return itemId;
     }
 
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
+
+
     public String getMemberId() {
         return memberId;
     }
@@ -50,7 +56,9 @@ public class Registration {
         return itemPrice;
     }
 
+
     public void setItemPrice(Long itemPrice) {
+
         this.itemPrice = itemPrice;
     }
 

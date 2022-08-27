@@ -28,11 +28,12 @@ public class Rental {
     public String getMemberId() {
         return memberId;
     }
-
+    public void setMemberId(String memberId) { this.memberId = memberId; }
 
     public int getItemId() {
         return itemId;
     }
+    public void setItemId(int itemId) { this.itemId = itemId;}
 
     public int getRentalTime() {
         return rentalTime;
@@ -53,5 +54,7 @@ public class Rental {
     public int getRentalId() {
         return rentalId;
     }
+    public void setRentalId(int rentalId) { this.rentalId = rentalId;}
+
 
 }

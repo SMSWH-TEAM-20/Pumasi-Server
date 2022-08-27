@@ -33,9 +33,7 @@ public class CompleteRental {
         this.completeRentalId = completeRentalId;
     }
 
-    public int getItemId() {
-        return itemId;
-    }
+    public int getItemId() {return itemId;}
 
     public void setItemId(int itemId) {
         this.itemId = itemId;

@@ -23,6 +23,9 @@ public class RentalServiceImpl implements RentalService {
         String memberId = rental.get().getMemberId();
         ApproveRental approveRental = new ApproveRental(itemId, rentalId, memberId);
         approveRentalRepository.save(approveRental);
+        approveRental.setRentalTime(rental.get().getRentalTime());
+
+
         return approveRental;
     }
 

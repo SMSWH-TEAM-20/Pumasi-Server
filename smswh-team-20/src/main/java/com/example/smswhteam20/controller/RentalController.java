@@ -25,9 +25,10 @@ public class RentalController {
     public Rental createRental(@RequestBody Member member,
                                @RequestParam(required = false, defaultValue = "") Integer itemId,
                                 @RequestParam(required = false, defaultValue = "") Integer rentalTime,
-                                @RequestParam(required = false, defaultValue = "")String memo){
+                                @RequestParam(required = false, defaultValue = "")String rentalMemo){
 
-        Rental rental = new Rental(member.getId(), itemId, rentalTime, memo);
+        Rental rental = new Rental(member.getId(), itemId, rentalTime, rentalMemo);
+
         rentalService.createRental(rental);
         rentalService.confirmRental(rental.getRentalId(), itemId);
         return rental;
