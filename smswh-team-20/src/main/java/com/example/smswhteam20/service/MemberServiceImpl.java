@@ -40,14 +40,6 @@ public class MemberServiceImpl implements MemberService{
         memberRepository.delete(member);
     }
 
-    @Override
-    public void changeMemberInformation(Member member, String id, String password, String name, String email, String telNum) {
-        member.setId(id);
-        member.setPassword(password);
-        member.setName(name);
-        member.setEmail(email);
-        member.setTelNum(telNum);
-    }
 
     @Override
     public void findRegistrationItems(Member member) {

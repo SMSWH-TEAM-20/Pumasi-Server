@@ -20,9 +20,6 @@ public interface MemberService {
     // 회원 탈퇴
     void leave(Member member);
 
-    // 회원 정보 수정
-    void changeMemberInformation(Member member, String id, String password, String name, String email, String telNum);
-
     // 특정 회원이 등록한 물건들 조회
     void findRegistrationItems(Member member);
 
