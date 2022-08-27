@@ -1,10 +1,13 @@
 package com.example.smswhteam20.domain;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Rental")
 public class Rental {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int rentalId;
     private String memberId;
     private int itemId;
     private int rentalTime;
@@ -47,5 +50,13 @@ public class Rental {
 
     public void setMemo(String memo) {
         this.memo = memo;
+    }
+
+    public int getRentalId() {
+        return rentalId;
+    }
+
+    public void setRentalId(int rentalId) {
+        this.rentalId = rentalId;
     }
 }
