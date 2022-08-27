@@ -36,11 +36,13 @@ public class RegistrationController {
                                       @RequestParam(value = "category", required = false, defaultValue = "")String category,
                                       @RequestParam(value = "itemPrice", required = false, defaultValue = "") int itemPrice){
 
+
         registrationService.changeInformation(registration, itemName, memo, category, itemPrice);
 
     }
 
     // -- 물건 정보 조회 하는 부분 -- (사실 객체만 있으면 .getName 이런식으로 하면 되긴 함)
+
 
     // 물건 이름 조회
     @GetMapping("/registration/information/name")

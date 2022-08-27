@@ -16,6 +16,7 @@ public class Registration {
     private int itemId;
 
     private String itemName;
+
     private String memberId;
     private int itemPrice;
 
@@ -24,13 +25,14 @@ public class Registration {
     private String category;
 
 
-    public Registration(String memo, String itemName, String memberId, String category, int itemPrice) {
-        this.memo = memo;
+    public Registration(String itemName, String memo, String memberId, String category, int itemPrice) {
         this.itemName = itemName;
+        this.memo = memo;
         this.memberId = memberId;
         this.category = category;
         this.itemPrice = itemPrice;
     }
+
 
     public Integer getItemId() {
         return itemId;
@@ -46,6 +48,14 @@ public class Registration {
 
     public int getItemPrice() {
         return itemPrice;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
     public void setItemPrice(int itemPrice) {

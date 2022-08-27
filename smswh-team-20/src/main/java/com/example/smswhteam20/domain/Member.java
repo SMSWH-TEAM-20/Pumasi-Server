@@ -23,9 +23,9 @@ public class Member  {
 
     private int point;
 
-    public ArrayList<Registration> registrationArrayList;
-    public ArrayList<ApproveRental> approveRentalArrayList;
-    public ArrayList<CompleteRental> completeRentalArrayList;
+    public ArrayList<Registration> registrationArrayList = new ArrayList<>();
+    public ArrayList<ApproveRental> approveRentalArrayList= new ArrayList<>();
+    public ArrayList<CompleteRental> completeRentalArrayList= new ArrayList<>();
 
 
     public Member(String id, String name, String password, String email, String telNum) {
