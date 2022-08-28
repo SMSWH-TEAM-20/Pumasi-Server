@@ -15,12 +15,17 @@ public class RentalServiceTest {
         Rental rental = new Rental("1", 2, 3, "4");
         //대여 생성
         rentalService.createRental(rental);
+        //rental 객체 조회
+        rentalService.findRental(rental.getRentalId());
         //대여 승인
         ApproveRental approveRental = rentalService.confirmRental(rental.getRentalId(), rental.getItemId());
+        // 대여한 물건 객체 조회
+        
         //대여 완료
         rentalService.returnRental(approveRental.getApproveRentalId(), approveRental.getItemId());
 
 
     }
+
 
 }

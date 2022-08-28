@@ -4,7 +4,9 @@ import com.example.smswhteam20.domain.*;
 import com.example.smswhteam20.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Optional;
 @Service
 @RequiredArgsConstructor
@@ -13,9 +15,13 @@ public class RentalServiceImpl implements RentalService {
     private final ApproveRentalRepository approveRentalRepository;
     private final CompleteRentalRepository completeRentalRepository;
 
+    private final RegistrationRepository registrationRepository;
+
+
     @Override
     public void createRental(Rental rental){ rentalRepository.save(rental);}
 
+    @Transactional
     @Override
     public ApproveRental confirmRental(int rentalId, int itemId) {  //대여 승인
         Optional<Rental> rental = rentalRepository.findById(rentalId);  // 주문 했었던 rental
@@ -24,8 +30,6 @@ public class RentalServiceImpl implements RentalService {
         ApproveRental approveRental = new ApproveRental(itemId, rentalId, memberId);
         approveRentalRepository.save(approveRental);
         approveRental.setRentalTime(rental.get().getRentalTime());
-
-
         return approveRental;
     }
 
@@ -38,5 +42,18 @@ public class RentalServiceImpl implements RentalService {
         completeRentalRepository.save(completeRental);
         return completeRental;
     }
+
+    @Override
+    public Optional<Rental> findRental(int rentalId){
+        return rentalRepository.findById(rentalId);
+    }
+
+//    @Override
+//    public Optional<Registration> findConfirmRental(int rentalId){
+//        Optional<ApproveRental> approveRental = approveRentalRepository.findById(rentalId);
+//        int itemId = approveRental.get().getItemId();
+//        System.out.println(registrationRepository.findById(itemId).get().getCategory());
+//        return registrationRepository.findById(itemId);
+//    }
 
 }

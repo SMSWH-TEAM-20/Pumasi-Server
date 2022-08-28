@@ -13,8 +13,8 @@ public class RegistrationServiceTest {
 
     @Test
     public void registrationServiceTest() {
-        Registration registration = new Registration("물건","입니다", "no.1", "가전", 1);
-        Registration registration1 = new Registration("냉장고","입니다", "no.2", "가전", 2);
+        Registration registration = new Registration("물건","입니다", "no.1", "가전", 1L);
+        Registration registration1 = new Registration("냉장고","입니다", "no.2", "가전", 2L);
         //등록
 
         registrationService.register(registration);
@@ -23,7 +23,7 @@ public class RegistrationServiceTest {
         registrationService.deleteRegistration(registration1);
 
         //등록 정보 변경
-        registrationService.changeInformation(registration, "가방","입니다", "잡화", 100 );
+        registrationService.changeInformation(registration, "가방","입니다", "잡화", 100L );
         //모든 등록 조회
 
         registrationService.findAllRegistration();
@@ -34,8 +34,8 @@ public class RegistrationServiceTest {
     @Test
     public void findAllRegistration(){
 
-        Registration registration = new Registration("물건","입니다", "no.1", "가전", 1);
-        Registration registration1 = new Registration("냉장고","입니다", "no.2", "가전", 2);
+        Registration registration = new Registration("물건","입니다", "no.1", "가전", 1L);
+        Registration registration1 = new Registration("냉장고","입니다", "no.2", "가전", 2L);
         //등록
         registrationService.register(registration);
         registrationService.register(registration1);

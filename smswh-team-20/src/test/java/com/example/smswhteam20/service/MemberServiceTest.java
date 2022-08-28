@@ -60,14 +60,13 @@ public class MemberServiceTest {
         Member member2 = new Member("no.2", "memberB", "2", "email2", "119");
         memberService.join(member2);
 
-        Registration registration1 = new Registration("물건","입니다", "no.1", "가전", 1);
+        Registration registration1 = new Registration("물건","입니다", "no.1", "가전", 1L);
         registrationService.register(registration1);
         memberService.findRegistrationItems(member1);
 
-        Registration registration2 = new Registration("사과","이다", "no.2", "음식", 2);
+        Registration registration2 = new Registration("사과","이다", "no.2", "음식", 2L);
         registrationService.register(registration2);
         memberService.findRegistrationItems(member2);
-
 
         System.out.println(member1.getRegistrationArrayList().get(0).getCategory());
         System.out.println(member2.getRegistrationArrayList().get(0).getCategory());
