@@ -65,12 +65,6 @@ public class RentalServiceImpl implements RentalService {
         return rentalRepository.findById(rentalId);
     }
 
-//    @Override
-//    public Optional<Registration> findConfirmRental(int rentalId){
-//        Optional<ApproveRental> approveRental = approveRentalRepository.findById(rentalId);
-//        int itemId = approveRental.get().getItemId();
-//        System.out.println(registrationRepository.findById(itemId).get().getCategory());
-//        return registrationRepository.findById(itemId);
-//    }
+
 
 }

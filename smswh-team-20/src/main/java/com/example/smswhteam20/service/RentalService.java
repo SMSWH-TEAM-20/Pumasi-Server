@@ -20,8 +20,6 @@ public interface RentalService {
     // rentalId로 rental 객체 조회하기
     Optional<Rental> findRental(int rentalId);
 
-    // rentalId로 대여한 물건 객체 조회하기
-//    Optional<Registration> findConfirmRental(int rentalId);
 
 
 }
