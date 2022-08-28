@@ -22,7 +22,7 @@ public class ApproveRental {
 
     private int rentalTime;
 
-    private byte[] approveRentalImage;
+    private byte[] approveRentalImage= new byte[]{};
 
 
     public ApproveRental(int itemId, int rentalId, String memberId) {
