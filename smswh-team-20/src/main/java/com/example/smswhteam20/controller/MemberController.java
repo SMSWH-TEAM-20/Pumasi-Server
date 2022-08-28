@@ -70,6 +70,14 @@ public class MemberController {
 
     // --- 마이페이지 부분 ---
 
+    // 회원 프로필 사진 바꾸기
+    @GetMapping("/myPage/changeImage")
+    public byte[] changeProfileImage(@RequestBody Member member,
+                                     @RequestParam(required = false, defaultValue = "") byte[] changeImage){
+        memberService.changeProfileImage(member, changeImage);
+        return changeImage;
+    }
+
     // 회원 이름 조회하기 :: 확인 완료
     @GetMapping("/myPage/getName")
     public String getName(@RequestBody Member member){
