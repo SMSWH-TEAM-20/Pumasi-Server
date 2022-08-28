@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -46,6 +47,14 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public void leave(Member member) {
         memberRepository.delete(member);
+    }
+
+    @Transactional
+    @Override
+    public byte[] changeProfileImage(Member member, byte[] profileImage) {
+        Optional<Member> member1 = memberRepository.findById(member.getId());
+        member1.get().setProfileImage(profileImage);
+        return profileImage;
     }
 
     @Override

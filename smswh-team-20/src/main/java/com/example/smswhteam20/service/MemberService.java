@@ -22,6 +22,9 @@ public interface MemberService {
     // 회원 탈퇴
     void leave(Member member);
 
+    // 이미지 변경
+    byte[] changeProfileImage(Member member, byte[] profileImage);
+
     // 특정 회원이 등록한 물건들 조회
     void findRegistrationItems(Member member);
 

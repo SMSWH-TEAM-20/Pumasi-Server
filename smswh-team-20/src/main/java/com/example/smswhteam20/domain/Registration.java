@@ -17,6 +17,8 @@ public class Registration {
 
     private String itemName;
 
+    private byte[] itemImage;
+
     private String memberId;
     private Long itemPrice;
 
@@ -26,14 +28,22 @@ public class Registration {
 
 
 
-    public Registration(String itemName, String memo, String memberId, String category, Long itemPrice) {
+    public Registration(String itemName, byte[] itemImage, String memo, String memberId, String category, Long itemPrice) {
         this.itemName = itemName;
+        this.itemImage = itemImage;
         this.memo = memo;
         this.memberId = memberId;
         this.category = category;
         this.itemPrice = itemPrice;
     }
 
+    public byte[] getItemImage() {
+        return itemImage;
+    }
+
+    public void setItemImage(byte[] itemImage) {
+        this.itemImage = itemImage;
+    }
 
     public Integer getItemId() {
         return itemId;
