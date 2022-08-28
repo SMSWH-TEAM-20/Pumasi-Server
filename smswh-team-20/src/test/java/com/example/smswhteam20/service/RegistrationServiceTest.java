@@ -1,6 +1,7 @@
 package com.example.smswhteam20.service;
 
 import com.example.smswhteam20.domain.Registration;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,8 +14,8 @@ public class RegistrationServiceTest {
 
     @Test
     public void registrationServiceTest() {
-        Registration registration = new Registration("물건","입니다", "no.1", "가전", 1L);
-        Registration registration1 = new Registration("냉장고","입니다", "no.2", "가전", 2L);
+        Registration registration = new Registration("물건", "image".getBytes(), "입니다", "no.1", "가전", 1L);
+        Registration registration1 = new Registration("냉장고", "image".getBytes(), "입니다",  "no.2", "가전", 2L);
         //등록
 
         registrationService.register(registration);
@@ -23,7 +24,7 @@ public class RegistrationServiceTest {
         registrationService.deleteRegistration(registration1);
 
         //등록 정보 변경
-        registrationService.changeInformation(registration, "가방","입니다", "잡화", 100L );
+        registrationService.changeInformation(registration, "가방", "image".getBytes(), "입니다", "잡화", 100L );
         //모든 등록 조회
 
         registrationService.findAllRegistration();
@@ -34,8 +35,8 @@ public class RegistrationServiceTest {
     @Test
     public void findAllRegistration(){
 
-        Registration registration = new Registration("물건","입니다", "no.1", "가전", 1L);
-        Registration registration1 = new Registration("냉장고","입니다", "no.2", "가전", 2L);
+        Registration registration = new Registration("물건","image".getBytes(), "입니다", "no.1", "가전", 1L);
+        Registration registration1 = new Registration("냉장고", "image".getBytes(), "입니다", "no.2", "가전", 2L);
         //등록
         registrationService.register(registration);
         registrationService.register(registration1);
@@ -45,5 +46,9 @@ public class RegistrationServiceTest {
             System.out.println(registrations.get(i).getItemName());
             System.out.println(RegistrationsByCategory.get(i).getMemo());
         }
+        byte[] itemImage = registration.getItemImage();
+        byte[] itemImage1 = registration1.getItemImage();
+        Assertions.assertThat(itemImage).isEqualTo(itemImage1);
+
     }
 }

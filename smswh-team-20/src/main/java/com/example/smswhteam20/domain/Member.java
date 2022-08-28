@@ -21,7 +21,8 @@ public class Member  {
     private String email;
     private String telNum;
 
-    private byte[] profileImage= new byte[]{};
+    private byte[] profileImage =  new byte[]{};
+
 
     private int point;
 
