@@ -23,7 +23,7 @@ public interface MemberService {
     void leave(Member member);
 
     // 이미지 변경
-    String changeProfileImage(Member member, String profileImage);
+    byte[] changeProfileImage(Member member, byte[] profileImage);
 
     // 특정 회원이 등록한 물건들 조회
     void findRegistrationItems(Member member);

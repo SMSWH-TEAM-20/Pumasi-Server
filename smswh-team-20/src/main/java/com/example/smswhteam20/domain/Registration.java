@@ -17,7 +17,7 @@ public class Registration {
 
     private String itemName;
 
-    private String itemImage;
+    private byte[] itemImage = new byte[]{};
 
     private String memberId;
     private Long itemPrice;
@@ -28,7 +28,7 @@ public class Registration {
 
 
 
-    public Registration(String itemName,String itemImage, String memo, String memberId, String category, Long itemPrice) {
+    public Registration(String itemName, byte[] itemImage, String memo, String memberId, String category, Long itemPrice) {
         this.itemName = itemName;
         this.itemImage = itemImage;
         this.memo = memo;
@@ -37,11 +37,11 @@ public class Registration {
         this.itemPrice = itemPrice;
     }
 
-    public String getItemImage() {
+    public byte[] getItemImage() {
         return itemImage;
     }
 
-    public void setItemImage(String itemImage) {
+    public void setItemImage(byte[] itemImage) {
         this.itemImage = itemImage;
     }
 

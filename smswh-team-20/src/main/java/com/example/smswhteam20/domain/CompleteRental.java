@@ -18,7 +18,7 @@ public class CompleteRental {
     private int approveRentalId;
     private String memberId;
 
-    private String completeRentalImage;
+    private byte[] completeRentalImage = new byte[]{};
 
     public CompleteRental(int itemId, int approveRentalId, String memberId) {
 
@@ -27,11 +27,11 @@ public class CompleteRental {
         this.memberId = memberId;
     }
 
-    public String getCompleteRentalImage() {
+    public byte[] getCompleteRentalImage() {
         return completeRentalImage;
     }
 
-    public void setCompleteRentalImage(String completeRentalImage) {
+    public void setCompleteRentalImage(byte[] completeRentalImage) {
         this.completeRentalImage = completeRentalImage;
     }
 

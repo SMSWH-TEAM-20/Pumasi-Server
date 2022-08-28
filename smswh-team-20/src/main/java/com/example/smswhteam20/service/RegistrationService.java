@@ -25,5 +25,5 @@ public interface RegistrationService {
     void deleteRegistration(Registration registration);
 
     // 등록했던 물건 정보 수정
-    void changeInformation(Registration registration, String itemName, String itemImage, String memo, String category, Long itemPrice);
+    void changeInformation(Registration registration, String itemName, byte[] itemImage, String memo, String category, Long itemPrice);
 }
