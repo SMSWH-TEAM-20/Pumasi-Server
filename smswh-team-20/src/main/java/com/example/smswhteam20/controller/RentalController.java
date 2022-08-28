@@ -1,9 +1,6 @@
 package com.example.smswhteam20.controller;
 
-import com.example.smswhteam20.domain.ApproveRental;
-import com.example.smswhteam20.domain.Member;
-import com.example.smswhteam20.domain.Registration;
-import com.example.smswhteam20.domain.Rental;
+import com.example.smswhteam20.domain.*;
 import com.example.smswhteam20.service.RentalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +27,8 @@ public class RentalController {
         Rental rental = new Rental(member.getId(), itemId, rentalTime, rentalMemo);
 
         rentalService.createRental(rental);
-        rentalService.confirmRental(rental.getRentalId(), itemId);
+        ApproveRental approveRental = rentalService.confirmRental(rental.getRentalId(), itemId);
+        // System.out.println(approveRental.getApproveRentalImage());
         return rental;
     }
 
@@ -41,7 +39,8 @@ public class RentalController {
     @PostMapping("rental/return")
     public void returnRental(@RequestParam(required = false, defaultValue = "") Integer approveRentalId,
                                @RequestBody Registration registration){
-        rentalService.returnRental(approveRentalId, registration.getItemId());
+        CompleteRental completeRental = rentalService.returnRental(approveRentalId, registration.getItemId());
+        // System.out.println(completeRental.getCompleteRentalImage());
     }
 
 }

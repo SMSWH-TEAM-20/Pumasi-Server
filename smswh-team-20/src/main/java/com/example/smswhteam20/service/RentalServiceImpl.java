@@ -33,7 +33,7 @@ public class RentalServiceImpl implements RentalService {
         approveRentalRepository.save(approveRental);
 
         // approveRentalRepository의 rentalTime과 approveRentalImage를 변경
-        Optional<ApproveRental> approveRental1 = approveRentalRepository.findById(approveRental.getRentalId());
+        Optional<ApproveRental> approveRental1 = approveRentalRepository.findById(approveRental.getApproveRentalId());
         approveRental1.get().setRentalTime(rental.get().getRentalTime());
 
         Optional<Registration> item1 = registrationRepository.findById(itemId);
