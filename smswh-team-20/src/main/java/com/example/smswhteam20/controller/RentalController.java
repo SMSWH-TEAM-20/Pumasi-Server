@@ -34,15 +34,6 @@ public class RentalController {
         return rental;
     }
 
-    /*
-
-    // 신청한 RentalId로 지금 대여중인 ApproveRental 객체 찾기 -> 미완
-    @GetMapping("/rental/searchApproveRental")
-    public ApproveRental searchApproveRental(@RequestBody Rental rental){
-        return null;
-    }
-
-    */
 
 
     // 물건 반납하기 -> 마이페이지. 대여 완료된 리스트로 들어감 :: 확인 완료

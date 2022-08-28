@@ -93,14 +93,14 @@ public class MemberController {
         return member.getRegistrationArrayList();
     }
 
-    // 회원 대여 중인 상품 목록 조회
+    // 회원 대여 중인 상품 목록 조회 :: 확인 완료
     @GetMapping("/myPage/getApproveRentalList")
     public ArrayList<ApproveRental> getApproveRentalList (@RequestBody Member member){
         memberService.findApproveRentalItems(member);
         return member.getApproveRentalArrayList();
     }
 
-    // 회원 대여 완료 상품 목록 조회
+    // 회원 대여 완료 상품 목록 조회 :: 확인 완료
     @GetMapping("/myPage/getCompleteRentalList")
     public ArrayList<CompleteRental> getCompleteRentalList (@RequestBody Member member){
         memberService.findCompleteRentalItems(member);
