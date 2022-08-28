@@ -17,7 +17,7 @@ public class RegistrationController {
     // 물건 등록하기 - 정보 모두 전달 ver. :: itemImage 재확인 필요
     @PostMapping("/registration/create-all")
     public Registration createAllRegistration(@RequestParam(required = false, defaultValue = "") String itemName,
-                                              @RequestParam(required = false, defaultValue = "") byte[] itemImage,
+                                              @RequestParam(required = false, defaultValue = "") String itemImage,
                                               @RequestParam(required = false, defaultValue = "")String memo,
                                               @RequestParam(required = false, defaultValue = "")String memberId,
                                               @RequestParam(required = false, defaultValue = "")String category,
@@ -58,7 +58,7 @@ public class RegistrationController {
     @PostMapping("/change/registration")
     public void changeItemInformation(@RequestBody Registration registration,
                                       @RequestParam(required = false, defaultValue = "")String itemName,
-                                      @RequestParam(required = false, defaultValue = "")byte[] itemImage,
+                                      @RequestParam(required = false, defaultValue = "")String itemImage,
                                       @RequestParam(required = false, defaultValue = "")String memo,
                                       @RequestParam(required = false, defaultValue = "")String category,
                                       @RequestParam(required = false, defaultValue = "") Long itemPrice){

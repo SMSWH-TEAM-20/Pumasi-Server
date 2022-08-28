@@ -21,7 +21,7 @@ public class Member  {
     private String email;
     private String telNum;
 
-    private byte[] profileImage;
+    private String profileImage;
 
     private int point;
 
@@ -30,7 +30,7 @@ public class Member  {
     public ArrayList<CompleteRental> completeRentalArrayList= new ArrayList<>();
 
 
-    public Member(String id, String name, byte[] profileImage, String password, String email, String telNum) {
+    public Member(String id, String name, String profileImage, String password, String email, String telNum) {
         this.id = id;
         this.name = name;
         this.profileImage = profileImage;
@@ -55,11 +55,11 @@ public class Member  {
         this.name = name;
     }
 
-    public byte[] getProfileImage() {
+    public String getProfileImage() {
         return profileImage;
     }
 
-    public void setProfileImage(byte[] profileImage) {
+    public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
     }
 

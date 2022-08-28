@@ -20,7 +20,7 @@ public class MemberServiceTest {
 
     @Test
     void memberServiceTest() {
-        Member member = new Member("no.7", "memberA", "1234", "email", "010");
+        Member member = new Member("no.7", "memberA", "image", "1234", "email", "010");
         //회원 가입
         memberService.join(member);
 
@@ -36,14 +36,15 @@ public class MemberServiceTest {
         //회원 탈퇴
         memberService.leave(member);
 
+
     }
 
     @Test
     public void findAll(){
         //전체회원 조회
-        Member member1 = new Member("no.1", "memberA", "1", "email1", "112");
+        Member member1 = new Member("no.1", "memberA", "image", "1", "email1", "112");
         memberService.join(member1);
-        Member member2 = new Member("no.2", "memberB", "2", "email2", "119");
+        Member member2 = new Member("no.2", "memberB", "image",  "2", "email2", "119");
         memberService.join(member2);
         ArrayList<Member> members = memberService.findAllMembers();
         Assertions.assertThat(members.size()).isEqualTo(2);
@@ -55,16 +56,16 @@ public class MemberServiceTest {
     @Test
     public void findRegistrationItems(){
         //특정 회원의 등록 물품 조회
-        Member member1 = new Member("no.1", "memberA", "1", "email1", "112");
+        Member member1 = new Member("no.1", "memberA", "image","1", "email1", "112");
         memberService.join(member1);
-        Member member2 = new Member("no.2", "memberB", "2", "email2", "119");
+        Member member2 = new Member("no.2", "memberB", "image", "2", "email2", "119");
         memberService.join(member2);
 
-        Registration registration1 = new Registration("물건","입니다", "no.1", "가전", 1L);
+        Registration registration1 = new Registration("물건", "image","입니다",  "no.1", "가전", 1L);
         registrationService.register(registration1);
         memberService.findRegistrationItems(member1);
 
-        Registration registration2 = new Registration("사과","이다", "no.2", "음식", 2L);
+        Registration registration2 = new Registration("사과", "image","이다", "no.2", "음식", 2L);
         registrationService.register(registration2);
         memberService.findRegistrationItems(member2);
 
@@ -77,12 +78,12 @@ public class MemberServiceTest {
     @Test
     public void findApproveRentalItems(){
         //특정 회원의 대여 중인 물품 조회
-        Member member1 = new Member("no.1", "memberA", "1", "email1", "112");
+        Member member1 = new Member("no.1", "memberA","image", "1", "email1", "112");
         memberService.join(member1);
-        Member member2 = new Member("no.2", "memberB", "2", "email2", "119");
+        Member member2 = new Member("no.2", "memberB", "image", "2", "email2", "119");
         memberService.join(member2);
 
-        Rental rental1 = new Rental("no.1", 1, 2, "3");
+        Rental rental1 = new Rental("no.1", 1, 3, "3");
         rentalService.createRental(rental1);
         rentalService.confirmRental(rental1.getRentalId(), rental1.getItemId());
         memberService.findApproveRentalItems(member1);
@@ -98,9 +99,9 @@ public class MemberServiceTest {
     @Test
     public void findCompleteRentalItems(){
         //특정 회원의 대여 완료된 물품 조회
-        Member member1 = new Member("no.1", "memberA", "1", "email1", "112");
+        Member member1 = new Member("no.1", "memberA","image", "1", "email1", "112");
         memberService.join(member1);
-        Member member2 = new Member("no.2", "memberB", "2", "email2", "119");
+        Member member2 = new Member("no.2", "memberB", "image", "2", "email2", "119");
         memberService.join(member2);
         Rental rental1 = new Rental("no.1", 1, 2, "3");
         rentalService.createRental(rental1);

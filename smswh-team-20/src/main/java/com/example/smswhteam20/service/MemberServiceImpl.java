@@ -51,7 +51,7 @@ public class MemberServiceImpl implements MemberService{
 
     @Transactional
     @Override
-    public byte[] changeProfileImage(Member member, byte[] profileImage) {
+    public String changeProfileImage(Member member, String profileImage) {
         Optional<Member> member1 = memberRepository.findById(member.getId());
         member1.get().setProfileImage(profileImage);
         return profileImage;
