@@ -19,6 +19,7 @@ public class Registration {
 
     private byte[] itemImage = new byte[]{};
 
+
     private String memberId;
     private Long itemPrice;
 

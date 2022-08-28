@@ -25,6 +25,7 @@ public class ApproveRental {
     private byte[] approveRentalImage = new byte[]{};
 
 
+
     public ApproveRental(int itemId, int rentalId, String memberId) {
         this.itemId = itemId;
         this.rentalId = rentalId;

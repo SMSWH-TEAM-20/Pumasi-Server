@@ -22,9 +22,9 @@ public class ByteImageTest {
 
     @Test
     void byteTest(){
-        Optional<Registration> item1 = registrationRepository.findById(5);
+        Optional<Registration> item1 = registrationRepository.findById(6);
         byte[] itemImage = item1.get().getItemImage();
-        Optional<ApproveRental> approveRental = approveRentalRepository.findById(6);
+        Optional<ApproveRental> approveRental = approveRentalRepository.findById(5);
         byte[] approveRentalImage = approveRental.get().getApproveRentalImage();
         CompleteRental completeRental = rentalService.returnRental(approveRental.get().getApproveRentalId(), item1.get().getItemId());
         byte[] completeRentalImage = completeRental.getCompleteRentalImage();

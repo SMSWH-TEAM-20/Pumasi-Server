@@ -23,6 +23,7 @@ public class Member  {
 
     private byte[] profileImage =  new byte[]{};
 
+
     private int point;
 
     public ArrayList<Registration> registrationArrayList = new ArrayList<>();
