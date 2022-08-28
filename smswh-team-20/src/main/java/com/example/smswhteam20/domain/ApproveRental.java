@@ -22,11 +22,21 @@ public class ApproveRental {
 
     private int rentalTime;
 
+    private byte[] approveRentalImage;
+
 
     public ApproveRental(int itemId, int rentalId, String memberId) {
         this.itemId = itemId;
         this.rentalId = rentalId;
         this.memberId = memberId;
+    }
+
+    public byte[] getApproveRentalImage() {
+        return approveRentalImage;
+    }
+
+    public void setApproveRentalImage(byte[] approveRentalImage) {
+        this.approveRentalImage = approveRentalImage;
     }
 
     public int getApproveRentalId() {

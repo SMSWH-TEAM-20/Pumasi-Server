@@ -15,7 +15,6 @@ public interface RegistrationService {
     // 모든 물건 조회
     ArrayList<Registration> findAllRegistration();
 
-
     // 카테고리별 물건 조회
     ArrayList<Registration> findAllRegistrationByCategory(String Category);
 
@@ -26,6 +25,5 @@ public interface RegistrationService {
     void deleteRegistration(Registration registration);
 
     // 등록했던 물건 정보 수정
-    void changeInformation(Registration registration, String itemName, String memo, String category, Long itemPrice);
-
+    void changeInformation(Registration registration, String itemName, byte[] itemImage, String memo, String category, Long itemPrice);
 }

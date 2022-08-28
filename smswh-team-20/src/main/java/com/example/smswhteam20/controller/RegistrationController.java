@@ -14,19 +14,20 @@ public class RegistrationController {
 
     private final RegistrationService registrationService;
 
-    // 물건 등록하기 - 정보 모두 전달 ver. :: 확인 완료
+    // 물건 등록하기 - 정보 모두 전달 ver. :: itemImage 재확인 필요
     @PostMapping("/registration/create-all")
     public Registration createAllRegistration(@RequestParam(required = false, defaultValue = "") String itemName,
-                                           @RequestParam(required = false, defaultValue = "")String memo,
-                                           @RequestParam(required = false, defaultValue = "")String memberId,
-                                           @RequestParam(required = false, defaultValue = "")String category,
-                                           @RequestParam(required = false, defaultValue = "")Long itemPrice){
-        Registration registration = new Registration(itemName, memo, memberId, category, itemPrice);
+                                              @RequestParam(required = false, defaultValue = "") byte[] itemImage,
+                                              @RequestParam(required = false, defaultValue = "")String memo,
+                                              @RequestParam(required = false, defaultValue = "")String memberId,
+                                              @RequestParam(required = false, defaultValue = "")String category,
+                                              @RequestParam(required = false, defaultValue = "")Long itemPrice){
+        Registration registration = new Registration(itemName, itemImage, memo, memberId, category, itemPrice);
         registrationService.register(registration);
         return registration;
     }
 
-    // 물건 등록하기 - 객체를 넘기면 DB에 저장 ver. :: 확인 완료
+    // 물건 등록하기 - 아예 객체 자체를 넘기면 DB에 저장 ver. :: 확인 완료
     @PostMapping("/registration/create")
     public Registration createRegistration(@RequestBody Registration registration){
         registrationService.register(registration);
@@ -53,16 +54,17 @@ public class RegistrationController {
         return registrationService.findAllRegistrationByCategory(category);
     }
 
-    // 등록한 물건 정보 수정 :: 확인 완료
+    // 등록한 물건 정보 수정 :: 중간 확인 완료 - 사진 저장 관련 다시 확인 필요
     @PostMapping("/change/registration")
     public void changeItemInformation(@RequestBody Registration registration,
                                       @RequestParam(required = false, defaultValue = "")String itemName,
+                                      @RequestParam(required = false, defaultValue = "")byte[] itemImage,
                                       @RequestParam(required = false, defaultValue = "")String memo,
                                       @RequestParam(required = false, defaultValue = "")String category,
                                       @RequestParam(required = false, defaultValue = "") Long itemPrice){
 
 
-        registrationService.changeInformation(registration, itemName, memo, category, itemPrice);
+        registrationService.changeInformation(registration, itemName, itemImage, memo, category, itemPrice);
 
     }
 

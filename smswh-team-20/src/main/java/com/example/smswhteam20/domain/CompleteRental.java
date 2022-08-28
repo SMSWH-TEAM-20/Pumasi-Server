@@ -18,11 +18,21 @@ public class CompleteRental {
     private int approveRentalId;
     private String memberId;
 
+    private byte[] completeRentalImage;
+
     public CompleteRental(int itemId, int approveRentalId, String memberId) {
 
         this.itemId = itemId;
         this.approveRentalId = approveRentalId;
         this.memberId = memberId;
+    }
+
+    public byte[] getCompleteRentalImage() {
+        return completeRentalImage;
+    }
+
+    public void setCompleteRentalImage(byte[] completeRentalImage) {
+        this.completeRentalImage = completeRentalImage;
     }
 
     public int getCompleteRentalId() {
