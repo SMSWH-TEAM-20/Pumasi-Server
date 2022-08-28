@@ -1,5 +1,6 @@
 package com.example.smswhteam20.service;
 
+import com.example.smswhteam20.domain.Member;
 import com.example.smswhteam20.domain.Registration;
 import com.example.smswhteam20.repository.RegistrationRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,11 @@ import java.util.Optional;
 public class RegistrationServiceImpl implements RegistrationService{
 
     private final RegistrationRepository registrationRepository;
+
+    @Override
+    public Optional<Registration> findItemById(int itemId){
+        return registrationRepository.findById(itemId);
+    }
 
     @Override
     public ArrayList<Registration> findAllRegistration() {
@@ -50,7 +56,6 @@ public class RegistrationServiceImpl implements RegistrationService{
 
     @Transactional
     @Override
-
     public void changeInformation(Registration registration, String itemName, String memo, String category, Long itemPrice) {
         Optional<Registration> registration1 = registrationRepository.findById(registration.getItemId());
         registration1.get().setItemName(itemName);
@@ -58,5 +63,6 @@ public class RegistrationServiceImpl implements RegistrationService{
         registration1.get().setCategory(category);
         registration1.get().setItemPrice(itemPrice);
     }
+
 
 }
