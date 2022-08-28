@@ -23,8 +23,7 @@ public class Member  {
 
     private byte[] profileImage =  new byte[]{};
 
-
-    private int point;
+    private int point = 10000;
 
     public ArrayList<Registration> registrationArrayList = new ArrayList<>();
     public ArrayList<ApproveRental> approveRentalArrayList= new ArrayList<>();

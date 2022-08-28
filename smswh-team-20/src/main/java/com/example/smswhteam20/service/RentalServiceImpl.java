@@ -17,6 +17,8 @@ public class RentalServiceImpl implements RentalService {
 
     private final RegistrationRepository registrationRepository;
 
+    private final MemberRepository memberRepository;
+
 
     @Override
     public void createRental(Rental rental){ rentalRepository.save(rental);}
@@ -31,6 +33,14 @@ public class RentalServiceImpl implements RentalService {
         String memberId = rental.get().getMemberId();
         ApproveRental approveRental = new ApproveRental(itemId, rentalId, memberId);
         approveRentalRepository.save(approveRental);
+
+        //대여시 포인트 차감
+        Optional<Member> member = memberRepository.findById(memberId);
+        int point = member.get().getPoint();
+        point -= 1000;
+        member.get().setPoint(point);
+        int point1 = member.get().getPoint();
+
 
         // approveRentalRepository의 rentalTime과 approveRentalImage를 변경
         Optional<ApproveRental> approveRental1 = approveRentalRepository.findById(approveRental.getApproveRentalId());
