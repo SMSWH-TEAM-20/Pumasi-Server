@@ -18,7 +18,7 @@ public class CompleteRental {
     private int approveRentalId;
     private String memberId;
 
-    private byte[] completeRentalImage;
+    private byte[] completeRentalImage = new byte[]{};
 
     public CompleteRental(int itemId, int approveRentalId, String memberId) {
 
