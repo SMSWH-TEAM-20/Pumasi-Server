@@ -7,15 +7,26 @@
 
 # 🎁 팀명 <푸머>
 
-- 구성원
-    
-    오지수(2110191) - 팀장 (백엔드)
-    
-    김보현(2111039) - 백엔드 
-    
-    남다은(2115903)- 프론트엔드
-    
-    박강희(2111841) - 프론트엔드
+### 🎁 구성원
+
+<table align = "center">
+  <tr align = "center">
+    <td colspan='2'><h3>Android Team</h3></td>
+    <td colspan='2'><h3>Server Team</h3></td>
+  </tr>
+  <tr align = "center">
+    <td width="24%"><a href="https://github.com/namdaeun"><img src="https://avatars.githubusercontent.com/u/96781926?v=4" width="100%"></a></td>
+    <td width="24%"><a href="https://github.com/stellar-halo"><img src="https://avatars.githubusercontent.com/u/91793891?v=4" width="100%"></a></td>
+    <td width="24%"><a href="https://github.com/dong0one"><img src="https://avatars.githubusercontent.com/u/109194790?v=4" width="100%"></a></td>
+    <td width="24%"><a href="https://github.com/5jisoo"><img src="https://avatars.githubusercontent.com/u/96935231?v=4" width="100%"></a></td>
+  </tr>
+  <tr align = "center">
+    <td><a href = "https://github.com/namdaeun">남다은 (namdaeun)</a></td>
+    <td><a href = "https://github.com/stellar-halo">박강희 (Hailey)</a></td>
+    <td><a href = "https://github.com/dong0one">김보현 (dong0one)</a></td>
+    <td><a href = "https://github.com/5jisoo">오지수 (Jisoo Oh)</a></td>
+  </tr>
+</table>
     
 
 ### 🎁출물 주소
