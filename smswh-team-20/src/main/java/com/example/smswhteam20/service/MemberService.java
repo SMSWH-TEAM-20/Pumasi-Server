@@ -14,7 +14,7 @@ public interface MemberService {
     ArrayList<Member> findAllMembers();
 
     // 회원 가입 join (중복 회원 조회 해야함)
-    void join (Member member);
+    Member join (Member member);
 
     // 회원 조회
     Optional<Member> findMember (String memberId);

@@ -20,8 +20,7 @@ public class MemberController {
     // 회원 가입 :: 확인 완료
     @PostMapping("/member/join")
     public Member save(@RequestBody Member member){
-        memberService.join(member);
-        return member;
+        return memberService.join(member);
     }
 
     // 회원 로그인 :: 확인 완료
@@ -38,13 +37,15 @@ public class MemberController {
             }
             else{
                 System.out.println("password does not match");
-                throw new IllegalStateException("password does not match");
+                // throw new IllegalStateException("password does not match");
+                return null;
             }
         }
         else {
             // 존재하지 않는 id.
             System.out.println("not exist");
-            throw new IllegalStateException("not exist");
+            // throw new IllegalStateException("not exist");
+            return null;
         }
 
     }

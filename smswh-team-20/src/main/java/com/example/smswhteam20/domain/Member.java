@@ -1,5 +1,7 @@
 package com.example.smswhteam20.domain;
 
+import com.example.smswhteam20.ByteArraySerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -21,7 +23,8 @@ public class Member  {
     private String email;
     private String telNum;
 
-    private byte[] profileImage =  new byte[]{};
+    @JsonSerialize(using = ByteArraySerializer.class)
+    private byte[] profileImage =  new byte[]{27};
 
     private int point = 10000;
 
